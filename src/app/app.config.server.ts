@@ -1,14 +1,10 @@
-import { ApplicationConfig, mergeApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideClientHydration, withIncrementalHydration } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { provideServerRendering } from '@angular/platform-server';
 import { appConfig } from './app.config';
-import { routes } from './app.routes';
 
 const serverConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
-    provideClientHydration(withIncrementalHydration()),
-    provideZoneChangeDetection({ eventCoalescing: true })
+    provideServerRendering()
   ]
 };
 
