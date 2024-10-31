@@ -12,10 +12,10 @@ async function workerFetchHandler(request: Request, env: Env) {
 	const url = new URL(request.url);
 	console.log("render SSR", url.href);
 
-	// Get the root `index.html` content.
-	const indexUrl = new URL("/", url);
-	const indexResponse = await env.ASSETS.fetch(new Request(indexUrl));
-	const document = await indexResponse.text();
+  // Get the root `index.html` content.
+  const indexUrl = new URL('/index.csr.html', url);
+  const indexResponse = await env.ASSETS.fetch(new Request(indexUrl));
+  const document = await indexResponse.text();
 
 	const content = await renderApplication(bootstrap, {
 		document,
