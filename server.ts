@@ -13,7 +13,7 @@ async function workerFetchHandler(request: Request, env: Env) {
 	console.log("render SSR", url.href);
 
   // Get the root `index.html` content.
-  const indexUrl = new URL('/index.csr.html', url);
+  const indexUrl = new URL('/_worker.js/index.server.html', url);
   const indexResponse = await env.ASSETS.fetch(new Request(indexUrl));
   const document = await indexResponse.text();
 
@@ -22,7 +22,7 @@ async function workerFetchHandler(request: Request, env: Env) {
 		url: url.pathname,
 	});
 
-	// console.log("rendered SSR", content);
+	//console.log("rendered SSR", content);
 	return new Response(content, indexResponse);
 }
 
