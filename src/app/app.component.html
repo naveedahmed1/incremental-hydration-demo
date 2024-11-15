@@ -1,7 +1,12 @@
-<h1>Angular Router Sample</h1>
+<h1>Incremental Hydration Demo</h1>
 
 @defer(hydrate on interaction) {
+<!--remove this if condition and it will work just fine-->
+@if(showNavLinks){
 <app-nav-links></app-nav-links>
 }
+}
 
+@defer(hydrate on interaction) {
 <router-outlet></router-outlet>
+}

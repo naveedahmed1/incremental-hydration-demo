@@ -14,4 +14,6 @@ import { NavLinksComponent } from './nav-links/nav-links.component';
 })
 export class AppComponent {
   title = 'temp';
+
+  showNavLinks = true;
 }
