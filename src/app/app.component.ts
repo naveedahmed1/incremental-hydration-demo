@@ -16,4 +16,6 @@ export class AppComponent {
   title = 'temp';
 
   showNavLinks = true;
+
+  enableNavLinks = false;
 }

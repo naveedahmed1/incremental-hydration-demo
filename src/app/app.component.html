@@ -1,12 +1,9 @@
 <h1>Incremental Hydration Demo</h1>
 
-@defer(hydrate on interaction) {
-<!--remove this if condition and it will work just fine-->
-@if(showNavLinks){
+@defer(hydrate on interaction; hydrate when enableNavLinks) {
 <app-nav-links></app-nav-links>
 }
-}
 
-<!--@defer(hydrate on interaction) {-->
 <router-outlet></router-outlet>
-<!--}-->
+
+<button (click)="enableNavLinks=true">Enable Navigation Links</button>
